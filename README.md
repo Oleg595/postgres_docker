@@ -4,3 +4,8 @@
 Для их создания, необходимо зайти в терминал контейнера и запустить скрипт 
 /scripts/create_databases.sh (может быть запущен только admin-пользователем:
 postgres)
+
+Создаваемые БД:
+* test
+* development
+* production
