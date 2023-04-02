@@ -1,0 +1,20 @@
+services:
+  rdbms:
+    image: postgres
+    command: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: 'whoami'
+    volumes:
+      - ./scripts/:/scripts/
+      - postgres-data:/var/lib/postgresql/data
+    user: postgres # админ-пользователь для postgres
+    ports:
+      - 5432:5432
+
+# Для того, чтобы после каждого перезапуска не пересоздавать БД
+# и не перезапускать миграционные скрипты, всё сохраняется в
+# хранилище postgres-data
+volumes:
+  postgres-data:
